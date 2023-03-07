@@ -12,7 +12,14 @@ class Prodotto {
     
     function __construct(string $_nome, int $_prezzo, string $_immagine, Animale $_animale, string $_tipo) {
         $this->nome = $_nome;
-        $this->prezzo = $_prezzo;
+        
+        if($_prezzo <= 0){
+            throw new Exception('errore: inserire un prezzo');
+        }
+        else{
+            $this->prezzo = $_prezzo;
+        }
+        
         $this->immagine = $_immagine;
         $this->animale = $_animale;
         $this->tipo = $_tipo;
