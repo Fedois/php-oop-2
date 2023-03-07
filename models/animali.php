@@ -1,8 +1,10 @@
 <?php
 require_once __DIR__. '/prodotto.php';
+require_once __DIR__. '/../traits/nome.php';
 
 class Animale {
-    public $nome;
+    use Nome;
+    // public $nome;
     public $icona;
 
     function __construct($_nome, $_icona) {
