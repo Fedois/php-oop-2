@@ -8,10 +8,15 @@ $animale2 = new Animale('gatto', 'icona-gatto.png');
 
 $prodotti = [];
 
-$prodotto1 = new cibo('Ciotola per cani', 10, 'ciotola-cani.png', $animale2, 'cibo', '14/05/2024', 'pollo');
-
-$prodotto2 = new gioco('osso', 5, 'gioco-cani.png', $animale1, 'gioco', 'gomma',);
-$prodotto3 = new cuccia('cuccia grande', 40, 'cuccia-cani.png', $animale1, 'cuccia', 'legno', '2x2');
+try{
+    $prodotto1 = new cibo('Ciotola per cani', 10, 'ciotola-cani.png', $animale2, 'cibo', '14/05/2024', 'pollo');
+    $prodotto2 = new gioco('osso', 5, 'gioco-cani.png', $animale1, 'gioco', 'gomma',);
+    $prodotto3 = new cuccia('cuccia grande', 40, 'cuccia-cani.png', $animale1, 'cuccia', 'legno', '2x2');
+} 
+catch (Exception $e){
+    echo 'Errore: devi aggiungere un prezzo';
+    exit;
+}
 
 
 $prodotti[] = $prodotto1;
